@@ -19,11 +19,11 @@ function App() {
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/Skill' element={<Skill />} />
-        <Route path='/abouzari/project' element={<Project />} />
-        <Route path='/abouzari/about' element={<About />} />
-        <Route path='/abouzari/hero' element={<Hero />} />
-        <Route path='/abouzari/contact' element={<Contact />} />
+        <Route path='/abouzari/AS_code/skill' element={<Skill />} />
+        <Route path='/abouzari/AS_code/project' element={<Project />} />
+        <Route path='/abouzari/AS_code/about' element={<About />} />
+        <Route path='/abouzari/AS_code/hero' element={<Hero />} />
+        <Route path='/abouzari/AS_code/contact' element={<Contact />} />
       </Routes>
 
     </>
