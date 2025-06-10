@@ -27,6 +27,14 @@ function Contact() {
     const handletask = (id) => {
         setOpenTasks(openTask === id ? null : id);
     }
+    // const CheckName = document.getElementById("Fullname");
+    // const CheckEmail = document.getElementById("Email");
+    // const CheckMessage = document.getElementById("Message");
+
+    // const patternName = /^[a-zA-Z0-9._-!@].{2,}$/;
+    // const patternEmail = /^[a-zA-Z0-9._-!@]+@[a-z-A-Z]\.[a-zA-Z]{2,}$/;
+    // const patternMessage = /^[a-zA-Z0-9._-!@%+].{30,}$/;
+
     return (
         <>
             <div className="section py-10">
@@ -59,7 +67,7 @@ function Contact() {
                                         <form onSubmit={handleSubmit} action={"https://formspree.io/f/manjynvj"} className='p-5'>
                                             <div className="text-left">
                                                 <label htmlFor="prenom" className='text-white  mr-5 font-bold font-[Merriweather] '>Nom / Prenom :</label><br />
-                                                <input className=' w-[250px] h-8 ml-10 py-1 px-2 mt-2 mb-7 rounded-lg text-black bg-white/20' type="text" name="Prenom" id="prenom" placeholder='Prenom' />
+                                                <input className=' w-[250px] h-8 ml-10 py-1 px-2 mt-2 mb-7 rounded-lg text-black bg-white/20' type="text" name="Prenom" id="Fullname" placeholder='Nom complet' />
                                                 <ValidationError
                                                     prefix="Prenom"
                                                     field="prenom"
@@ -68,7 +76,7 @@ function Contact() {
                                             </div>
                                             <div className="">
                                                 <label htmlFor="mail" className='text-white mr-5 font-bold font-[Merriweather] '>Email :</label><br />
-                                                <input type="text" name="Email" id="mail" placeholder='example@gmail.com' className=' w-[250px] h-8 ml-10 py-1 px-2 mt-2 mb-7 rounded-lg text-black bg-white/20' />
+                                                <input type="text" name="Email" id="Email" placeholder='example@gmail.com' className=' w-[250px] h-8 ml-10 py-1 px-2 mt-2 mb-7 rounded-lg text-black bg-white/20' />
                                                 <ValidationError
                                                     prefix="Email"
                                                     field="mail"
@@ -78,7 +86,7 @@ function Contact() {
 
                                             <div className="">
                                                 <label htmlFor="message" className='text-white mr-5 font-bold font-[Merriweather] '>Message :</label><br />
-                                                <textarea name="Message" id="message" className='ml-10 w-[250px] h-28 py-1 px-3 mt-2 rounded-lg bg-white/20'>
+                                                <textarea name="Message" id="Message" className='ml-10 w-[250px] h-28 py-1 px-3 mt-2 rounded-lg bg-white/20'>
                                                 </textarea>
                                                 <ValidationError
                                                     prefix="Message"
