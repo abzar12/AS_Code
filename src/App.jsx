@@ -19,11 +19,11 @@ function App() {
 
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/abouzari/AS_code/skill' element={<Skill />} />
-        <Route path='/abouzari/AS_code/project' element={<Project />} />
-        <Route path='/abouzari/AS_code/about' element={<About />} />
-        <Route path='/abouzari/AS_code/hero' element={<Hero />} />
-        <Route path='/abouzari/AS_code/contact' element={<Contact />} />
+        <Route path='/abouzari/as-code/skill' element={<Skill />} />
+        <Route path='/abouzari/as-code/project' element={<Project />} />
+        <Route path='/abouzari/as-code/about' element={<About />} />
+        <Route path='/abouzari/as-code/hero' element={<Hero />} />
+        <Route path='/abouzari/as-code/contact' element={<Contact />} />
       </Routes>
       <Footer />
     </>

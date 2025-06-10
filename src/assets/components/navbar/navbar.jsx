@@ -16,24 +16,24 @@ function Navbar() {
         {
             id: 3,
             name: "Skills",
-            link: "/abouzari/AS_code/skill"
+            link: "/abouzari/as-code/skill"
         },
         {
             id: 2,
             name: "Projects",
-            link: "/abouzari/AS_code/project"
+            link: "/abouzari/as-code/project"
         },
         
         {
             id: 4,
             name: "About",
-            link: "/abouzari/AS_code/about"
+            link: "/abouzari/as-code/about"
         },
         
         {
             id: 5,
             name: "Contact",
-            link: "/abouzari/AS_code/contact"
+            link: "/abouzari/as-code/contact"
         }
 
     ]
