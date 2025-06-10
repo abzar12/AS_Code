@@ -29,7 +29,7 @@ function Hero() {
                         </div>
 
                     </div>
-                    <div className="img_container h-[400px] w-auto  sm:w-96 mt-24 mx-auto overflow-hidden">
+                    <div className="img_container h-[400px] w-auto  max-sm:w-96 sm:w-96 mt-24 mx-auto overflow-hidden">
                         <div className="image_box ">
                             <img src={imageProfile} alt="AbzarCamara" className="object-cover overflow-hidden" />
                         </div>
