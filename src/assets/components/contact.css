@@ -1,0 +1,12 @@
+
+@media(max-width:375px){
+    .ac_form{
+        width: auto;
+    }
+    .ac_input_contain label{
+        width: auto;
+    }
+    .ac_input_contain input, #Message{
+        margin-left: 5px;
+    }
+}

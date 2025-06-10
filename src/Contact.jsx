@@ -2,6 +2,7 @@
 import { useForm, ValidationError } from '@formspree/react';
 import { useState } from 'react';
 import React from "react";
+import './assets/components/contact.css'
 
 function Contact() {
     const [state, handleSubmit] = useForm("manjynvj");
@@ -45,9 +46,10 @@ function Contact() {
                             <p className="font-[Lora] text-[17px]">Vous cherchez à travailler avec un développeur web freelance pour votre projet ? Que ce soit pour un site sur mesure, une refonte, une application web ou une boutique e-commerce, je suis là pour vous accompagner.Je collabore avec des startups, Petites et Moyennes Entreprises et indépendants pour créer des sites modernes, efficaces et adaptés à leurs objectifs</p>
                         </div>
                         <div className="px-auto ">
-                            <div className=" md:grid grid-flow-col gap-32">
-                                <div className="pl-16 ">
-                                    <h3 className='text-3xl text-center mb-10 underline'>Questions fréquentes</h3>
+                            <div className=" md:grid grid-flow-col gap-5 lg:gap-32">
+                                
+                                <div className="lg:pl-16">
+                                    <h3 className='text-2xl text-center mb-10 underline'>Questions fréquentes</h3>
                                     {
                                         Tasks.map((Task) => (
                                             <div className="mb-5 p-2 max-w-[600px] bg-white/30 transition duration-300 hover:bg-white/40 rounded-lg" key={Task.id}>
@@ -62,21 +64,21 @@ function Contact() {
                                         ))
                                     }
                                 </div>
-                                <div className="w-full">
-                                    <div className="w-[350px] shadow-[0_3px_5px_rgb(255,255,255,0.5)] mx-auto">
+                                <div className="w-full pt-5">
+                                    <div className="ac_form w-[350px] shadow-[0_3px_5px_rgb(255,255,255,0.5)] mx-auto">
                                         <form onSubmit={handleSubmit} action={"https://formspree.io/f/manjynvj"} className='p-5'>
-                                            <div className="text-left">
+                                            <div className="text-left ac_input_contain ">
                                                 <label htmlFor="prenom" className='text-white  mr-5 font-bold font-[Merriweather] '>Nom / Prenom :</label><br />
-                                                <input className=' w-[250px] h-8 ml-10 py-1 px-2 mt-2 mb-7 rounded-lg text-black bg-white/20' type="text" name="Prenom" id="Fullname" placeholder='Nom complet' />
+                                                <input className=' w-[250px] h-8 ml-10 py-1 px-2 mt-2 mb-7 rounded-lg text-black bg-white/20 focus:outline-none focus:ring-2 focus:ring-blue-500' type="text" name="Prenom" id="Fullname" placeholder='Nom complet' />
                                                 <ValidationError
                                                     prefix="Prenom"
                                                     field="prenom"
                                                     errors={state.errors}
                                                 />
                                             </div>
-                                            <div className="">
+                                            <div className=" ac_input_contain">
                                                 <label htmlFor="mail" className='text-white mr-5 font-bold font-[Merriweather] '>Email :</label><br />
-                                                <input type="text" name="Email" id="Email" placeholder='example@gmail.com' className=' w-[250px] h-8 ml-10 py-1 px-2 mt-2 mb-7 rounded-lg text-black bg-white/20' />
+                                                <input type="text" name="Email" id="Email" placeholder='example@gmail.com' className=' w-[250px] h-8 ml-10 py-1 px-2 mt-2 mb-7 rounded-lg text-black bg-white/20 focus:outline-none focus:ring-2 focus:ring-blue-500' />
                                                 <ValidationError
                                                     prefix="Email"
                                                     field="mail"
@@ -84,9 +86,9 @@ function Contact() {
                                                 />
                                             </div>
 
-                                            <div className="">
+                                            <div className=" ac_input_contain">
                                                 <label htmlFor="message" className='text-white mr-5 font-bold font-[Merriweather] '>Message :</label><br />
-                                                <textarea name="Message" id="Message" className='ml-10 w-[250px] h-28 py-1 px-3 mt-2 rounded-lg bg-white/20'>
+                                                <textarea name="Message" id="Message" className='ml-10 w-[250px] h-28 py-1 px-3 mt-2 rounded-lg bg-white/20 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500'>
                                                 </textarea>
                                                 <ValidationError
                                                     prefix="Message"
