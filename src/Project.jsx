@@ -32,7 +32,7 @@ function Project() {
         <>
             <div className="conatainer m-5">
                 <div className="ac_row w-full  text-white p-4 rounded min-h-[300px]">
-                    <h1 className="text-2xl font-[Lora] text-blue-600 text-center">PROJECT</h1>
+                    <h1 className="text-3xl font-[Lora] text-blue-600 text-center">PROJETS</h1>
                     <div className=" w-full  p-5 mx-auto">
                         {
                             project.map((ele) => (

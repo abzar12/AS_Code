@@ -1,14 +1,57 @@
 
-import { useForm, ValidationError } from '@formspree/react';
+import { useForm} from '@formspree/react';
 import { useState } from 'react';
+import { FaCheckCircle } from 'react-icons/fa';
 import React from "react";
 import './assets/components/contact.css'
 
 function Contact() {
     const [state, handleSubmit] = useForm("manjynvj");
-    if (state.succeeded) {
-        return <p>Thanks for Conctact Us !</p>;
+    const [formsuccess, SetFormsuccess] = useState("");
+    const [formData, SetFormData] = useState({
+        Nom: "",
+        Email: "",
+        Message: ""
+    })
+    const handleForm = (e) => {
+        SetFormData({ ...formData, [e.target.name]: e.target.value })
     }
+
+    const validateForm = () => {
+        const ValidName = /^[a-zA-Z._+]+$/;
+        const ValidEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        const ValidMessage = /^.{5,}$/;
+
+        return (
+            ValidName.test(formData.Nom.trim()) &&
+            ValidEmail.test(formData.Email.trim()) &&
+            ValidMessage.test(formData.Message.trim())
+        );
+    };
+
+    const customSubmit = async (e) => {
+        e.preventDefault();
+        if (validateForm()) {
+            await handleSubmit(e);
+            if (state.succeeded) {
+                SetFormsuccess("Success");
+                SetFormData({ Nom: "", Email: "", Message: "" });
+            }
+        } else {
+            SetFormsuccess("Error");
+        }
+    };
+    //    // ){
+
+    //     if (state.succeeded) {
+    //         SetFormsuccess("Success")
+    //     form.reset();
+    //     SetFormsuccess("Success");
+    // }
+    //} //else{
+    // SetFormsuccess("Error");
+    //}
+
     const Tasks = [{
         id: 1,
         title: "Combien coûte un site web sur mesure ?",
@@ -41,13 +84,13 @@ function Contact() {
             <div className="section py-10">
                 <div className="container w-full px-5 mx-auto">
                     <div className="row mx-auto ">
-                        <h1 className="text-2xl font-[Lora] text-blue-600 text-center Uppercase">CONTACTE NOUS</h1>
+                        <h1 className="text-3xl font-[Lora] text-blue-600 text-center">CONTACTEZ NOUS</h1>
                         <div className="p-5 max-w-[800px] mx-auto">
                             <p className="font-[Lora] text-[17px]">Vous cherchez à travailler avec un développeur web freelance pour votre projet ? Que ce soit pour un site sur mesure, une refonte, une application web ou une boutique e-commerce, je suis là pour vous accompagner.Je collabore avec des startups, Petites et Moyennes Entreprises et indépendants pour créer des sites modernes, efficaces et adaptés à leurs objectifs</p>
                         </div>
                         <div className="px-auto ">
                             <div className=" md:grid grid-flow-col gap-5 lg:gap-32">
-                                
+
                                 <div className="lg:pl-16">
                                     <h3 className='text-2xl text-center mb-10 underline'>Questions fréquentes</h3>
                                     {
@@ -66,42 +109,63 @@ function Contact() {
                                 </div>
                                 <div className="w-full pt-5">
                                     <div className="ac_form w-[350px] shadow-[0_3px_5px_rgb(255,255,255,0.5)] mx-auto">
-                                        <form onSubmit={handleSubmit} action={"https://formspree.io/f/manjynvj"} className='p-5'>
+                                        <form onSubmit={customSubmit} action={"https://formspree.io/f/manjynvj"} className='p-5'>
                                             <div className="text-left ac_input_contain ">
                                                 <label htmlFor="prenom" className='text-white  mr-5 font-bold font-[Merriweather] '>Nom / Prenom :</label><br />
-                                                <input className=' w-[250px] h-8 ml-10 py-1 px-2 mt-2 mb-7 rounded-lg text-black bg-white/20 focus:outline-none focus:ring-2 focus:ring-blue-500' type="text" name="Prenom" id="Fullname" placeholder='Nom complet' />
-                                                <ValidationError
+                                                <input className=' w-[250px] h-8 ml-10 py-1 px-2 mt-2 mb-7 rounded-lg text-gray-200 bg-white/20 focus:outline-none focus:ring-2 focus:ring-blue-500'
+                                                    value={formData.Nom}
+                                                    onChange={handleForm}
+                                                    type="text" name="Nom" placeholder='Nom complet' />
+                                                {/* <ValidationError
                                                     prefix="Prenom"
                                                     field="prenom"
                                                     errors={state.errors}
-                                                />
+                                                /> */}
                                             </div>
                                             <div className=" ac_input_contain">
                                                 <label htmlFor="mail" className='text-white mr-5 font-bold font-[Merriweather] '>Email :</label><br />
-                                                <input type="text" name="Email" id="Email" placeholder='example@gmail.com' className=' w-[250px] h-8 ml-10 py-1 px-2 mt-2 mb-7 rounded-lg text-black bg-white/20 focus:outline-none focus:ring-2 focus:ring-blue-500' />
-                                                <ValidationError
+                                                <input type="text" name="Email" placeholder='example@gmail.com' className=' w-[250px] h-8 ml-10 py-1 px-2 mt-2 mb-7 rounded-lg text-gray-200 bg-white/20 focus:outline-none focus:ring-2 focus:ring-blue-500' value={formData.Email}
+                                                    onChange={handleForm} />
+                                                {/* <ValidationError
                                                     prefix="Email"
                                                     field="mail"
                                                     errors={state.errors}
-                                                />
+                                                /> */}
+
                                             </div>
 
                                             <div className=" ac_input_contain">
                                                 <label htmlFor="message" className='text-white mr-5 font-bold font-[Merriweather] '>Message :</label><br />
-                                                <textarea name="Message" id="Message" className='ml-10 w-[250px] h-28 py-1 px-3 mt-2 rounded-lg bg-white/20 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500'>
+                                                <textarea name="Message" className='ml-10 w-[250px] h-28 py-1 px-3 mt-2 rounded-lg bg-white/20 resize-none text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500' value={formData.Message}
+                                                    onChange={handleForm} >
                                                 </textarea>
-                                                <ValidationError
+                                                {/* <ValidationError
                                                     prefix="Message"
                                                     field="message"
                                                     errors={state.errors}
-                                                />
+                                                /> */}
                                             </div>
                                             <div className="text-right m-5">
                                                 <button type="submit" disabled={state.submitting} className='w-16 h-7 border rounded text-white font-[Lora] transition duration-300 hover:bg-white/20 '>
                                                     Submit
                                                 </button>
                                             </div>
+                                            {
+                                                formsuccess === "Success" && (
+                                                    <div className="text-center">
+                                                        <FaCheckCircle className='mx-auto text-3xl text-green-500'/>
+                                                        <p className='text-green-500 text-[18px]'> Merci pour votre message ! Nous vous contacterons dans les plus brefs délais.</p>
+                                                    </div>
+                                                )
+                                            }
+                                            {
+                                                formsuccess === "Error" && (
+                                                    <div className="text-center">
+                                                        <p className='text-red-400 text-[18px]'>Tous les champs doivent être remplis.</p>
+                                                    </div>
+                                                )
 
+                                            }
                                         </form>
 
                                     </div>

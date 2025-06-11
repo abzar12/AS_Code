@@ -10,23 +10,23 @@ function Navbar() {
     const Menu = [
         {
             id: 1,
-            name: "Home",
+            name: "Accueil",
             link: "/"
         },
         {
             id: 3,
-            name: "Skills",
+            name: "Compétences",
             link: "/abouzari/as-code/skill"
         },
         {
             id: 2,
-            name: "Projects",
+            name: "Projets",
             link: "/abouzari/as-code/project"
         },
         
         {
             id: 4,
-            name: "About",
+            name: "À propos",
             link: "/abouzari/as-code/about"
         },
         
