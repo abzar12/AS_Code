@@ -59,10 +59,10 @@ function Navbar() {
                         </div>
                         {open && (
                             <div className="flex justify-center  h-[150px] z-50 text-center">
-                                <ul className=" gap-8 absolute border-t border-white bg-[rgb(15,33,77)] w-full">
+                                <ul className=" gap-8 border-t border-white bg-[rgb(7,13,28)] w-full z-50 absolute cursor-pointer">
                                     {
                                         Menu.map((menu) => (
-                                            <li key={menu.id} className=" transition duration-900 ease text-center">
+                                            <li key={menu.id} className=" transition duration-900 ease text-center z-50">
                                                 <Link to={menu.link} className=" text-[rgb(255,255,255)] transition-All ease duration-75 hover:text-gray-500 font-[Lora] text-lg"> {menu.name}</Link>
                                             </li>
                                         ))

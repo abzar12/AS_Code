@@ -47,7 +47,7 @@ function Project() {
                             project.map((ele) => (
                                 <div className="mx-auto mb-20 bg-[#001227] shadow-[0_0_30px_rgba(255,255,255,0.2)] max-w-[900px]" >
                                     <ul className="">
-                                        <li key={ele.id} className="" >
+                                        <li key={ele.id} className="">
                                             <a href={ele.Link} className="mx-auto sm:flex" target="_blank" rel="noopener noreferrer" data-aos="fade-right"><img className="sm:max-w-[350px] " src={ele.image} key={ele.id} alt="Gestion_Etudiant" />
                                                 <div className=" mx-5 sm:mt-5">
                                                     <h1 className="font-[Lora] underline font-bold text-1xl md:text-2xl ">{ele.h1}</h1>
