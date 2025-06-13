@@ -1,11 +1,20 @@
 import React from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
 
 function About() {
+    useEffect(() => {
+                AOS.init({
+                  duration: 1500, // animation duration in ms
+                  once: true      // animation only happens once on scroll
+                });
+              }, []);
     return (
         <>
             <div className="section mx-auto">
-                <div className="container m-auto lg:flex justify-center items-center text-center">
-                    <div className="text-left bg-slate-700/30 lg:w-[1100px] m-4 lg:px-15 px-0 lg:pb-15 rounded-lg shadow-[1px_0_10px_rgba(255,255,255,0.6)] ">
+                <div className="container m-auto lg:flex justify-center items-center text-center" data-aos="zoom-in">
+                    <div className="text-left bg-slate-700/30 lg:w-[1100px] m-4 lg:px-15 px-0 lg:pb-15 rounded-lg shadow-[1px_0_10px_rgba(255,255,255,0.6)] " >
                         <div className="text-left p-5 lg:mx-20 ">
                             <h1 className="text-3xl text-center font-[Lora] pb-5 text-blue-600">À PROPOS DE NOUS</h1>
                             <p className="mb-5 font-[Merriweather] text-base/7 text-gray-300">

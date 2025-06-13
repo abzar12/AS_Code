@@ -1,4 +1,6 @@
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
 import { useForm} from '@formspree/react';
 import { useState } from 'react';
 import { FaCheckCircle } from 'react-icons/fa';
@@ -6,6 +8,12 @@ import React from "react";
 import './assets/components/contact.css'
 
 function Contact() {
+    useEffect(() => {
+            AOS.init({
+              duration: 1500, // animation duration in ms
+              once: true      // animation only happens once on scroll
+            });
+          }, []);
     const [state, handleSubmit] = useForm("manjynvj");
     const [formsuccess, SetFormsuccess] = useState("");
     const [formData, SetFormData] = useState({
@@ -86,7 +94,7 @@ function Contact() {
                     <div className="row mx-auto ">
                         <h1 className="text-3xl font-[Lora] text-blue-600 text-center">CONTACTEZ NOUS</h1>
                         <div className="p-5 max-w-[800px] mx-auto">
-                            <p className="font-[Lora] text-[17px]">Vous cherchez à travailler avec un développeur web freelance pour votre projet ? Que ce soit pour un site sur mesure, une refonte, une application web ou une boutique e-commerce, je suis là pour vous accompagner.Je collabore avec des startups, Petites et Moyennes Entreprises et indépendants pour créer des sites modernes, efficaces et adaptés à leurs objectifs</p>
+                            <p className="font-[Lora] text-[17px]" data-aos="zoom-in-up">Vous cherchez à travailler avec un développeur web freelance pour votre projet ? Que ce soit pour un site sur mesure, une refonte, une application web ou une boutique e-commerce, je suis là pour vous accompagner.Je collabore avec des startups, Petites et Moyennes Entreprises et indépendants pour créer des sites modernes, efficaces et adaptés à leurs objectifs</p>
                         </div>
                         <div className="px-auto ">
                             <div className=" md:grid grid-flow-col gap-5 lg:gap-32">
@@ -108,7 +116,7 @@ function Contact() {
                                     }
                                 </div>
                                 <div className="w-full pt-5">
-                                    <div className="ac_form w-[350px] shadow-[0_3px_5px_rgb(255,255,255,0.5)] mx-auto">
+                                    <div className="ac_form w-[350px] shadow-[0_3px_5px_rgb(255,255,255,0.5)] mx-auto" data-aos="zoom-in-right">
                                         <form onSubmit={customSubmit} action={"https://formspree.io/f/manjynvj"} className='p-5'>
                                             <div className="text-left ac_input_contain ">
                                                 <label htmlFor="prenom" className='text-white  mr-5 font-bold font-[Merriweather] '>Nom / Prenom :</label><br />

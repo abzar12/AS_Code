@@ -1,10 +1,19 @@
 import React from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
 import image4 from "../src/assets/image/respo,sible.jpg"
 import image2 from "../src/assets/image/skill.jpg";
 import image3 from "../src/assets/image/database.jpg"
 import image1 from "../src/assets/image/ux:ui.jpg"
 
 function Skill() {
+     useEffect(() => {
+            AOS.init({
+              duration: 1500, // animation duration in ms
+              once: true      // animation only happens once on scroll
+            });
+          }, []);
     const allSkill = [
         {
             ID: 1,
@@ -50,7 +59,7 @@ function Skill() {
                             <ul className="grid grid-cols-[repeat(auto-fit,_minmax(2,_2fr))] md:grid-cols-none gap-10 text-left">
                             {
                                 allSkill.map((menu) => (
-                                    <li key={menu.ID} className=" md:pb-5 sm:border-none md:flex w-auto p-5">
+                                    <li key={menu.ID} className=" md:pb-5 sm:border-none md:flex w-auto p-5" data-aos="fade-right">
                                         <img src={menu.img} key={menu.key} alt="" className="md:w-[350px] w-full text-left rounded-lg " />
                                         <div className=" font-[Merriweather] py-3 pl-3 md:p-0 bg-sky-950 md:bg-transparent rounded-e-lg w-full border-l-8 border-blue-500 md:border-none md:w-[500px] md:mx-5" >
                                             <label htmlFor="" className="text-2xl md:text-3xl lg:mr-5 font-bold font-[Lora]">{menu.Name}</label>

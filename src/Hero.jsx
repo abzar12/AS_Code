@@ -1,4 +1,7 @@
 import React from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
@@ -7,16 +10,22 @@ import imageProfile from "/src/assets/image/abzar2.png";
 
 import './assets/components/abou.css';
 function Hero() {
+    useEffect(() => {
+        AOS.init({
+          duration: 1500, // animation duration in ms
+          once: true      // animation only happens once on scroll
+        });
+      }, []);
     return (
         <>
             <section className="ac_section pb-5">
                 <div className="container lg::h-[600px] my-auto p-2 gap-5 lg:grid lg:grid-cols-2">
                     <div className="flex items-center">
                         <div className=" md:px-10 px-5">
-                            <h1 className="pt-10 lg:pt-0 text-white text-4xl font-[Merriweather]">Abzar Camara</h1>
+                            <h1 className="pt-10 lg:pt-0 text-white text-4xl font-[Merriweather]" data-aos="zoom-in">Abzar Camara</h1>
                             <div className=" ">
                                 <label className="animate-bounce-slow ml-10 text-1xl text-blue-500">Développeur Full stack</label>
-                                <p className="py-5 px-2 text-[12px] md:text-[18px]">
+                                <p className="py-5 px-2 text-[12px] md:text-[18px]" data-aos="fade-right">
                                     Je conçois des applications web complètes, du design frontend à l'architecture backend.
                                     Passionné par le code propre, la performance et l'expérience utilisateur.
                                 </p>
