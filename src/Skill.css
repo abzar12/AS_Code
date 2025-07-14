@@ -1,0 +1,68 @@
+.ac_container {
+    padding: 20px;
+    width: 100%;
+}
+
+.ac_card {
+    width: 100%;
+    margin: auto;
+}
+
+.ac_card .ac_list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 320px));
+    justify-content: space-evenly;
+}
+
+.ac_card .ac_list li {
+     width: 300px;
+    height: 390px;
+    margin: 20px ;
+    position: relative;
+    z-index: 99;
+    background: rgb(0, 12, 39);
+    overflow: hidden;
+    padding: 5px;
+    border-radius: 20px;
+}
+
+.ac_card .ac_list li::before {
+    content: '';
+    position: absolute;
+    width: 80px;
+    left: 100px;
+    top: -50px;
+    background-image: linear-gradient(180deg, rgb(0, 183, 255), rgb(255, 48, 255));
+    height: 150%;
+    animation: anim 5s linear infinite;
+    transform: rotate(90deg);
+    transition: all 0.3s linear;
+    z-index: -10;
+    
+}
+
+.ac_card .ac_list li::after {
+    content: "";
+    position: absolute;
+    background: rgb(0, 12, 39);
+    border-radius: 15px;
+    z-index: 99;
+    inset: 5px;
+    z-index: -1;
+
+}
+
+.ac_card .ac_list li .ac_text {
+    height: 180px;
+    padding: 10px;
+}
+
+@keyframes anim {
+    from {
+        transform: rotate(360deg);
+    }
+
+    to {
+        transform: rotate(180deg);
+    }
+}

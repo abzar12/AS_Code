@@ -15,21 +15,23 @@ function Contact() {
             });
           }, []);
     const [state, handleSubmit] = useForm("manjynvj");
-    const [formsuccess, SetFormsuccess] = useState("");
+    const [formsuccess, SetFormsuccess] = useState(""); // initiate the form 
     const [formData, SetFormData] = useState({
         Nom: "",
         Email: "",
         Message: ""
     })
+    // function to manage form
     const handleForm = (e) => {
         SetFormData({ ...formData, [e.target.name]: e.target.value })
     }
-
+    // after getting the value to check the information getting
     const validateForm = () => {
         const ValidName = /^[a-zA-Z._+]+$/;
         const ValidEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         const ValidMessage = /^.{5,}$/;
 
+        // removing the white space 
         return (
             ValidName.test(formData.Nom.trim()) &&
             ValidEmail.test(formData.Email.trim()) &&
@@ -37,6 +39,7 @@ function Contact() {
         );
     };
 
+    // function for success or error
     const customSubmit = async (e) => {
         e.preventDefault();
         if (validateForm()) {
@@ -49,17 +52,6 @@ function Contact() {
             SetFormsuccess("Error");
         }
     };
-    //    // ){
-
-    //     if (state.succeeded) {
-    //         SetFormsuccess("Success")
-    //     form.reset();
-    //     SetFormsuccess("Success");
-    // }
-    //} //else{
-    // SetFormsuccess("Error");
-    //}
-
     const Tasks = [{
         id: 1,
         title: "Combien coûte un site web sur mesure ?",
@@ -79,13 +71,6 @@ function Contact() {
     const handletask = (id) => {
         setOpenTasks(openTask === id ? null : id);
     }
-    // const CheckName = document.getElementById("Fullname");
-    // const CheckEmail = document.getElementById("Email");
-    // const CheckMessage = document.getElementById("Message");
-
-    // const patternName = /^[a-zA-Z0-9._-!@].{2,}$/;
-    // const patternEmail = /^[a-zA-Z0-9._-!@]+@[a-z-A-Z]\.[a-zA-Z]{2,}$/;
-    // const patternMessage = /^[a-zA-Z0-9._-!@%+].{30,}$/;
 
     return (
         <>
@@ -103,7 +88,7 @@ function Contact() {
                                     <h3 className='text-2xl text-center mb-10 underline'>Questions fréquentes</h3>
                                     {
                                         Tasks.map((Task) => (
-                                            <div className="mb-5 p-2 max-w-[600px] bg-white/30 transition duration-300 hover:bg-white/40 rounded-lg" key={Task.id}>
+                                            <div className="mb-5 p-2 max-w-[600px] bg-white/30 transition duration-300 hover:bg-white/40 rounded-lg " data-aos="fade-right" key={Task.id}>
                                                 <div onClick={() => handletask(Task.id)} className=' cursor-pointer font-bold'><h2>{Task.title}</h2></div>
                                                 {
                                                     openTask === Task.id && (

@@ -62,7 +62,7 @@ function Navbar() {
                                 <ul className=" gap-8 border-t border-white bg-[rgba(12,22,49,0.78)] w-full z-50 absolute cursor-pointer backdrop-blur-sm ">
                                     {
                                         Menu.map((menu) => (
-                                            <li key={menu.id} className=" transition duration-900 ease text-center z-50 ">
+                                            <li key={menu.id} className=" transition duration-900 ease text-center z-50 mb-2">
                                                 <Link to={menu.link} className=" text-[rgb(255,255,255)] transition-All ease duration-75 hover:text-gray-500 font-[Lora] text-lg"> {menu.name}</Link>
                                             </li>
                                         ))
