@@ -50,8 +50,6 @@ function Skill() {
             P3: "Postman (API testing)"
         }
     ]
-
-
     return (
         <>
             <div className="section">
@@ -71,11 +69,8 @@ function Skill() {
                                             <p className=" text-white font-light font-[Open Sans] text-[15px]"><span className="text-2xl text-white ">•</span> {menu.P2}</p>
                                             <p className=" text-white font-light font-[Open Sans] text-[15px]"><span className="text-2xl text-white ">•</span> {menu.P3}</p>
                                             </div>
-                                            
                                         </div>
                                         </div>
-                                        
-
                                     </li>
                                 ))
                             }
