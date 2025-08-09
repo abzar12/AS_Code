@@ -11,7 +11,7 @@ function GetData() {
                     }
                     return response.json();
                 })
-                .then((data) => SetData(data))
+                .then((data) => SetData[data])
         .catch((error) => {
             console.error(error.message)
         });
