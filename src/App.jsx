@@ -9,7 +9,7 @@ import Home from './Home';
 import Contact from './Contact';
 import Footer from './assets/components/footer/footer';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
+import GetData from '../ContactForm';
 
 function App() {
 
@@ -24,6 +24,7 @@ function App() {
         <Route path='/abouzari/as-code/about' element={<About />} />
         <Route path='/abouzari/as-code/hero' element={<Hero />} />
         <Route path='/abouzari/as-code/contact' element={<Contact />} />
+        <Route path='/abouzari/as-code/ContactForm' element={<GetData />} />
       </Routes>
       <Footer />
     </>
