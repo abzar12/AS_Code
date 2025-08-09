@@ -58,7 +58,7 @@ function Project() {
         },
         {
             id: 8,
-            Link: "https://abzar12.github.io/End-of-day-Challenges/playing-css&js/var.html",
+            Link: "https://abzar12.github.io/End-of-day-Challenges/playing-cssjs/var.html",
             image: "var.png",
             h1: "Customizing Styles with JavaScript and CSS Root Variables",
         }
@@ -71,19 +71,19 @@ function Project() {
                     <div className="ac-items" >
                         {
                             project.map((ele) => (
-                                    <div className="item" >
-                                        <ul className="">
-                                            <a href={ele.Link} className="z-50" target="_blank" rel="noopener noreferrer" data-aos="fade-right">
+                                <div className="item" >
+                                    <ul className="">
+                                        <a href={ele.Link} className="z-50" target="_blank" rel="noopener noreferrer" data-aos="fade-right">
                                             <li key={ele.id} className="">
                                                 <img className="" src={ele.image} key={ele.id} alt="Gestion_Etudiant" />
-                                                    <div className="">
-                                                        <h1 className="font-[Lora] text-center">{ele.h1}</h1>
-                                                    </div>
-                                                     < FaEye className="my-eye" />
+                                                <div className="">
+                                                    <h1 className="font-[Lora] text-center">{ele.h1}</h1>
+                                                </div>
+                                                < FaEye className="my-eye" />
                                             </li>
-                                                </a>
-                                        </ul>
-                                    </div>
+                                        </a>
+                                    </ul>
+                                </div>
                             ))
                         }
                     </div>
